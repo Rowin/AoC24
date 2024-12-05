@@ -1,0 +1,4 @@
+/.idea/
+utils/config.yaml
+/inputs/*.txt
+__pychache__/
