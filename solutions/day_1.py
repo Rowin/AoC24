@@ -1,21 +1,13 @@
-from utils.AOC import LinearAOC
+from utils.AOC import NumberLineAOC
 
-class Day1(LinearAOC):
+class Day1(NumberLineAOC):
     DAY = 1
     
     def parse_input(self):
         super().parse_input()
         
-        left, right = [], []
-        
-        line: str
-        for line in self.input:
-            a, b = [int(i) for i in line.split()]
-            left.append(a)
-            right.append(b)
-            
-        self.left = left
-        self.right = right
+        self.left, self.right = zip(*self.input)
+    
     
     def part_1(self):            
         return sum([abs(a - b) for a, b in zip(sorted(self.left), sorted(self.right))])

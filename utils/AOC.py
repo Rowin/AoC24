@@ -96,3 +96,8 @@ class GridGroupAOC(LineGroupAOC, ABC):
             grid_input.append(np.array([list(line) for line in group]))
 
         self.input = grid_input
+
+class NumberLineAOC(LinearAOC, ABC):
+    def parse_input(self):
+        super().parse_input()
+        self.input = [list(map(int, line.split())) for line in self.input]
