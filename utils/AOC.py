@@ -63,6 +63,12 @@ class BaseAOC(ABC):
 class LinearAOC(BaseAOC, ABC):
     def parse_input(self):
         self.input = self.raw_input.splitlines()
+        
+        
+class SingleLineAOC(LinearAOC, ABC):
+    def parse_input(self):
+        super().parse_input()
+        self.input = self.input[0]
 
 
 class GridAOC(BaseAOC, ABC):
